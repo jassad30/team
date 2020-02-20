@@ -311,6 +311,10 @@ p.hideonactive {
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script id="rendered-js">
 $(function () {
+	Parse.initialize("R6IwGqioaRgiEA59NZPSuR9Q0ZW5ynLEij4gzwEO", "35SuGVCIxnxEzAi0SSXKmjRmC0xiI9JoLaEgx9z5");
+	Parse.serverURL = "https://parseapi.back4app.com/";
+
+
   $('.material-card > .mc-btn-action').click(function () {
     var card = $(this).parent('.material-card');
     var icon = $(this).children('i');
@@ -366,9 +370,7 @@ $(function () {
 
   gtag('config', 'UA-61808240-2');
 
-Parse.initialize("R6IwGqioaRgiEA59NZPSuR9Q0ZW5ynLEij4gzwEO", "35SuGVCIxnxEzAi0SSXKmjRmC0xiI9JoLaEgx9z5");
-Parse.serverURL = "https://parseapi.back4app.com/";
- $("#subscribe-form").on("submit", function(){
+function submitForm() {
 	var TeamMate = Parse.Object.extend("TeamMate");
 	const teamMate = new TeamMate();
 
@@ -387,8 +389,7 @@ Parse.serverURL = "https://parseapi.back4app.com/";
 		document.getElementById("notes").value = "";
 		
 	});
-	return false;
-});
+}
 </script>
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5VDBTJG"
@@ -398,7 +399,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div class="subscribe-box"> 
   <h2>Join our team next year, <small>may be sooner</small></h2>
   <p></p>
-  <form id="subscribe-form" class="subscribe" >
+  <form class="subscribe" onsubmit="submitForm();return false;">
     <input id="name" type="text" placeholder="Name" autocomplete="off" required="required"/>
 	<input id="email" type="email" placeholder="Email (example@gmail.com)" autocomplete="off" required="required"/>
 	<input id="phone" type="text" placeholder="Phone" autocomplete="off" />
