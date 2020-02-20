@@ -374,11 +374,11 @@ function submitForm() {
 	var TeamMate = Parse.Object.extend("TeamMate");
 	const teamMate = new TeamMate();
 
-	teamMate.set("name", document.getElementById("name"));
-	teamMate.set("email", document.getElementById("email"));
-	teamMate.set("phone", document.getElementById("phone"));
-	teamMate.set("linkedin", document.getElementById("linkedin"));
-	teamMate.set("notes", document.getElementById("notes"));
+	teamMate.set("name", document.getElementById("name").value);
+	teamMate.set("email", document.getElementById("email").value);
+	teamMate.set("phone", document.getElementById("phone").value);
+	teamMate.set("linkedin", document.getElementById("linkedin").value);
+	teamMate.set("notes", document.getElementById("notes").value);
 	
 
 	teamMate.save().then(function(response) {
